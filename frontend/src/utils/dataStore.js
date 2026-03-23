@@ -1,9 +1,9 @@
 export const DEFAULT_CAMPAIGNS = [
   { id: 1, name: "Hospital de Clínicas", address: "Av. Italia 2800", date: "Lun-Vie", hours: "08:00 - 12:00", urgent: true, phone: "59899123456", lat: -34.8872, lng: -56.1481 },
-  { id: 2, name: "Hospital Pasteur", address: "Larravide 74", date: "Lun-Sab", hours: "07:30 - 11:30", urgent: false, phone: "59899654321", lat: -34.9069, lng: -56.2086 },
-  { id: 3, name: "Hemocentro Maldonado", address: "Av. Roosevelt y Prado", date: "Mar-Vie", hours: "08:00 - 14:00", urgent: true, phone: "59899000111", lat: -34.8821, lng: -56.1555 },
+  { id: 2, name: "Hospital Pasteur", address: "Larravide 74", date: "Lun-Sab", hours: "07:30 - 11:30", urgent: false, phone: "59899654321", lat: -34.8814, lng: -56.1360 },
+  { id: 3, name: "Hemocentro Maldonado", address: "Av. Roosevelt y Prado", date: "Mar-Vie", hours: "08:00 - 14:00", urgent: true, phone: "59899000111", lat: -34.9142, lng: -54.9563 },
   { id: 4, name: "Hospital Maciel", address: "25 de Mayo 174", date: "Lun-Mie", hours: "07:00 - 11:00", urgent: false, phone: "59899999888", lat: -34.9069, lng: -56.2086 },
-  { id: 5, name: "Médica Uruguaya", address: "Av. 8 de Octubre 2492", date: "Lun-Vie", hours: "08:00 - 13:00", urgent: true, phone: "59899777666", lat: -34.8821, lng: -56.1555 }
+  { id: 5, name: "Médica Uruguaya", address: "Av. 8 de Octubre 2492", date: "Lun-Vie", hours: "08:00 - 13:00", urgent: true, phone: "59899777666", lat: -34.8888, lng: -56.1542 }
 ];
 
 export const DEFAULT_QUESTIONS = [

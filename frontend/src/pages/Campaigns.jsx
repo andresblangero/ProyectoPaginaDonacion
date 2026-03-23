@@ -40,28 +40,14 @@ const Campaigns = () => {
           
           const rawCamps = [...getCampaigns()];
           
-          const updatedCamps = await Promise.all(rawCamps.map(async (camp) => {
-            try {
-               // Consultar API de OSRM (Open Source Routing Machine) para distancia real de conducción
-               const res = await fetch(`https://router.project-osrm.org/route/v1/driving/${userLng},${userLat};${camp.lng},${camp.lat}?overview=false`);
-               const data = await res.json();
-               if (data.code === 'Ok' && data.routes && data.routes.length > 0) {
-                  return { 
-                    ...camp, 
-                    distance: data.routes[0].distance / 1000, // metros a km 
-                    duration: Math.round(data.routes[0].duration / 60) // segundos a min
-                  };
-               }
-            } catch(e) {
-               console.error("OSRM Routing failed for", camp.name, e);
-            }
-            // Fallback a línea recta si la API falla o el punto es inaccesible
-            return {
+          const updatedCamps = rawCamps.map((camp) => {
+             // Utilizando exclusivamente fórmula Haversine local para asegurar determinismo
+             // y evitar cuellos de botella/bloqueos CORS con la API pública de OSRM
+             return {
                ...camp,
-               distance: calculateDistance(userLat, userLng, camp.lat, camp.lng),
-               duration: null
-            };
-          }));
+               distance: calculateDistance(userLat, userLng, camp.lat, camp.lng)
+             };
+          });
           
           const sorted = updatedCamps.sort((a, b) => a.distance - b.distance);
           
