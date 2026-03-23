@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Donación de Sangre Premium</title>
+    <meta name="description" content="Plataforma moderna y rápida para coordinar donación de sangre y salvar vidas.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Animado (Efecto Vida/Sangre) -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <!-- Navegación -->
+    <nav class="glass-nav">
+        <div class="logo">
+            <i class="fa-solid fa-droplet icon-pulse"></i>
+            <span>Donate.uy</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active" data-target="home">Inicio</a>
+            <a href="#" data-target="dashboard">Mi Portal</a>
+            <a href="#" class="btn-primary" data-target="eligibility">Donar Ahora</a>
+        </div>
+    </nav>
+
+    <main id="app-container">
+        <!-- VISTA: INICIO (LANDING PAGE) -->
+        <section id="view-home" class="view active-view">
+            <header class="hero">
+                <div class="hero-content">
+                    <h1>Tu tipo de sangre está <span>salvando vidas</span> hoy.</h1>
+                    <p>Únete a la red más rápida y moderna de donantes. Descubre tu elegibilidad en segundos y reserva tu cita sin esperas.</p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" data-target="eligibility">
+                            <i class="fa-solid fa-heart-circle-check"></i> Soy Elegible?
+                        </button>
+                        <button class="btn-secondary" data-target="dashboard">
+                            Acceder a mi Portal
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Termómetro de Urgencias (Live Need) -->
+                <div class="urgency-panel glass-panel">
+                    <h3><i class="fa-solid fa-tower-broadcast"></i> Urgencia en Hospitales Locales</h3>
+                    <p class="subtitle">Actualizado hace 5 minutos</p>
+                    
+                    <div class="blood-types-grid">
+                        <div class="blood-type-card critical">
+                            <span class="type">O-</span>
+                            <div class="bar-container"><div class="bar fill-10"></div></div>
+                            <span class="status">Crítico</span>
+                        </div>
+                        <div class="blood-type-card urgent">
+                            <span class="type">A-</span>
+                            <div class="bar-container"><div class="bar fill-30"></div></div>
+                            <span class="status">Urgente</span>
+                        </div>
+                        <div class="blood-type-card stable">
+                            <span class="type">A+</span>
+                            <div class="bar-container"><div class="bar fill-80"></div></div>
+                            <span class="status">Estable</span>
+                        </div>
+                        <div class="blood-type-card urgent">
+                            <span class="type">O+</span>
+                            <div class="bar-container"><div class="bar fill-40"></div></div>
+                            <span class="status">Bajo</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="features">
+                <h2>¿Por qué donar con nosotros?</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-panel">
+                        <div class="icon-circle"><i class="fa-regular fa-clock"></i></div>
+                        <h3>RapidPass</h3>
+                        <p>Completa tu cuestionario de salud desde tu móvil antes de llegar. Cero esperas.</p>
+                    </div>
+                    <div class="feature-card glass-panel">
+                        <div class="icon-circle"><i class="fa-solid fa-route-car"></i></div>
+                        <h3>El Viaje de tu Sangre</h3>
+                        <p>Te notificamos paso a paso hasta el momento exacto en que salvaste una vida.</p>
+                    </div>
+                    <div class="feature-card glass-panel">
+                        <div class="icon-circle"><i class="fa-solid fa-users-viewfinder"></i></div>
+                        <h3>Equipos Locales</h3>
+                        <p>Forma un escuadrón con tu universidad o trabajo y compite para ver quién ayuda más.</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- VISTA: PORTAL DEL DONANTE (DASHBOARD) -->
+        <section id="view-dashboard" class="view hidden-view">
+            <div class="dashboard-header">
+                <h2>¡Hola, Andrés! 👋</h2>
+                <p>Tu próxima donación puede ser a partir del <strong>15 de Abril</strong>.</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Carnet Digital -->
+                <div class="donor-card glass-panel">
+                    <div class="card-top">
+                        <i class="fa-solid fa-address-card"></i>
+                        <span>Carnet Digital</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="blood-badge">
+                            <h3>A+</h3>
+                            <p>Tu Grupo</p>
+                        </div>
+                        <div class="donor-stats">
+                            <div class="stat"><span class="num">5</span><span>Donaciones</span></div>
+                            <div class="stat"><span class="num">15</span><span>Vidas Salvadas</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Viaje de la Sangre Tracker -->
+                <div class="journey-tracker glass-panel col-span-2">
+                    <h3><i class="fa-solid fa-map-location-dot"></i> El Viaje de tu Última Donación (01/Mar)</h3>
+                    <div class="tracker-stepper">
+                        <div class="step completed">
+                            <div class="circle"><i class="fa-solid fa-check"></i></div>
+                            <p>Donaste</p>
+                        </div>
+                        <div class="step completed">
+                            <div class="circle"><i class="fa-solid fa-vial-circle-check"></i></div>
+                            <p>Analizada</p>
+                        </div>
+                        <div class="step completed pulse-anim">
+                            <div class="circle"><i class="fa-solid fa-truck-medical"></i></div>
+                            <p>En Camino</p>
+                        </div>
+                        <div class="step pending">
+                            <div class="circle"><i class="fa-solid fa-hospital-user"></i></div>
+                            <p>Paciente</p>
+                        </div>
+                    </div>
+                    <div class="tracker-message">
+                        <p><strong><i class="fa-solid fa-bell"></i> Novedad:</strong> Tus glóbulos rojos van en camino al Hospital Maciel.</p>
+                    </div>
+                </div>
+                
+                <!-- Próxima Cita -->
+                 <div class="appointment-card glass-panel col-span-3">
+                    <div class="appointment-info">
+                        <h3><i class="fa-regular fa-calendar-check"></i> Tú próximo turno no está agendado</h3>
+                        <p>La necesidad de donantes O- y A- está alta hoy.</p>
+                    </div>
+                    <button class="btn-primary" data-target="eligibility">Agendar Cita (RapidPass)</button>
+                 </div>
+            </div>
+        </section>
+
+        <!-- VISTA: ELEGIBILIDAD / RAPIDPASS -->
+        <section id="view-eligibility" class="view hidden-view">
+            <div class="eligibility-container glass-panel">
+                <h2><i class="fa-solid fa-clipboard-user"></i> Chequeo Rápido de Elegibilidad</h2>
+                <p>Responde estas preguntas rápidas para asegurarnos de que puedes donar hoy (RapidPass).</p>
+                
+                <div id="quiz-container" class="quiz-box">
+                    <div class="question-step active" id="step-1">
+                        <h3>1. ¿Te has hecho un tatuaje, acupuntura o perforación en los últimos 6 meses?</h3>
+                        <div class="quiz-options">
+                            <button class="quiz-btn no-btn">No, nada de eso</button>
+                            <button class="quiz-btn yes-btn" data-fail="true">Sí, me lo hice</button>
+                        </div>
+                    </div>
+                    
+                    <div class="question-step hidden" id="step-2">
+                        <h3>2. ¿Has tenido fiebre, dolor de garganta o síntomas gripales en la última semana?</h3>
+                        <div class="quiz-options">
+                            <button class="quiz-btn no-btn">No, me siento perfecto</button>
+                            <button class="quiz-btn yes-btn" data-fail="true">Sí, estoy algo enfermo</button>
+                        </div>
+                    </div>
+
+                    <div class="question-step hidden" id="step-3">
+                        <h3>3. ¿Te han realizado alguna cirugía mayor en los últimos 6 meses?</h3>
+                        <div class="quiz-options">
+                            <button class="quiz-btn no-btn" id="finish-quiz">No, ninguna</button>
+                            <button class="quiz-btn yes-btn" data-fail="true">Sí, me operaron</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Resultados -->
+                    <div id="quiz-success" class="result-message success hidden">
+                        <i class="fa-solid fa-circle-check fa-3x"></i>
+                        <h3>¡Genial! Eres apto para donar.</h3>
+                        <p>Tu pre-chequeo RapidPass fue aprobado. Ahorraste 15 minutos de espera.</p>
+                        <button class="btn-primary mt-4" data-target="dashboard">Reservar Turno Ahora</button>
+                    </div>
+
+                    <div id="quiz-fail" class="result-message error hidden">
+                        <i class="fa-solid fa-circle-xmark fa-3x"></i>
+                        <h3>Podría no ser el momento ideal.</h3>
+                        <p>Por tu seguridad y la de los pacientes, el sistema indica que podés no ser apto hoy. Te recomendamos consultar con nuestro asistente virtual "Jamie".</p>
+                        <button class="btn-secondary mt-4" data-target="home">Volver al Inicio</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Asistente Flotante -->
+    <div class="ai-assistant-btn">
+        <i class="fa-solid fa-robot"></i>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

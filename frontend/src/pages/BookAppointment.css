@@ -1,0 +1,75 @@
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap: 0.75rem;
+}
+
+.calendar-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 0.5rem;
+  border-radius: var(--rounded-md);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  background: var(--bg);
+  transition: all 0.2s ease;
+}
+
+.calendar-day:hover {
+  border-color: var(--primary);
+  background: rgba(229, 57, 53, 0.05); /* very light primary */
+}
+
+.calendar-day.selected {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(229, 57, 53, 0.2);
+}
+
+.calendar-day .weekday {
+  font-size: 0.75rem;
+  text-transform: capitalize;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.calendar-day .day-number {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* Time Grid */
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 0.75rem;
+  transition: opacity 0.3s ease;
+}
+
+.time-slot {
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: var(--rounded-md);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.time-slot:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.time-slot.selected {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}

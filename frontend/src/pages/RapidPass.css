@@ -1,0 +1,102 @@
+/* RapidPass.css - Estética Premium y Split Layout */
+
+.rapidpass-layout {
+  display: flex;
+  min-height: calc(100vh - 70px); /* 100vh - navbar altura */
+  background-color: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.rapidpass-image-side {
+  flex: 1;
+  background-color: var(--border); /* Fallback */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: none; /* Hide on mobile */
+  transition: background-image 0.5s ease-in-out;
+}
+
+.rapidpass-image-side::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  /* Overlay oscuro con acento rojo para darle misterio y hacer legibles los textos si los hubiera */
+  background: linear-gradient(to right, rgba(0,0,0,0.4), rgba(229, 57, 53, 0.4));
+}
+
+.rapidpass-content-side {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background: var(--bg);
+  position: relative;
+}
+
+/* El fondo del lado de contenido también tiene el SVG médico pero muy sutil */
+.rapidpass-content-side::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff5252' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+.rapidpass-card {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  z-index: 1;
+  padding: 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--rounded-lg);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Scaling for Tablets */
+@media (min-width: 768px) {
+  .rapidpass-card {
+    max-width: 650px;
+    padding: 4rem 3.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .rapidpass-image-side {
+    display: block; /* Show only on desktop */
+  }
+  .rapidpass-card {
+    max-width: 550px; /* Reduce width back down since it shares screen space with the image */
+    padding: 3.5rem 3rem;
+  }
+}
